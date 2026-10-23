@@ -211,6 +211,47 @@ Given that the redocking control fails, the ranking results should be read as
 
 ---
 
+## Related work, and what this project rediscovered
+
+After finishing, I went looking for literature on the failure mode above. It is
+a known problem, and two pieces of work target it directly. Both are worth
+reading before taking anything here as novel.
+
+**[SymDOCK](https://www.biorxiv.org/content/10.1101/2023.10.27.564400v1)** —
+Smith, Knight, Kormos, Pepe, Kunach, Diamond, Shahmoradian, Irwin, DeGrado and
+Shoichet (bioRxiv, 2023). Ligands on tau fibrils form stacks that follow the
+fibril's symmetry, and *interact more with each other than with the protein*.
+SymDOCK applies the fibril's symmetry operation to each pose, rejects poses
+that clash with their own image, and adds a ligand-ligand van der Waals term to
+the score. It reproduces the poses of three tau PET tracers, and predicted the
+MK-6240 stack before that structure was solved.
+
+**[CORAL](https://arxiv.org/abs/2607.17412)** — Sun, Li, Tao and Schmidhuber
+(arXiv:2607.17412, 2026). A reinforcement-learning docking model whose reward
+combines docking affinity with a *cooperative ligand-ligand stacking energy*
+term, together with an expert-validated amyloid evaluation set. A recent
+preprint; part of its benchmark uses generated rather than experimental
+reference poses.
+
+This reframes the results above. The apo-vs-holo comparison here — neighbouring
+dye copies being worth 3.5 kcal/mol and taking near-native poses from 0/9 to
+2/9 — is an independent rediscovery of the premise both methods are built on,
+not a new finding. Equally, "Vina's scoring cannot rank the stacked pose first"
+is close to the motivation for writing SymDOCK in the first place.
+
+So the honest conclusion is narrower than it first looked: **plain AutoDock
+Vina is the wrong tool for a ligand that binds in a symmetric stack**, and the
+right tools already exist. What this repository contributes is a worked
+demonstration of catching that with a control rather than shipping the rankings.
+
+One concrete improvement those papers point to: SymDOCK enriches known ligands
+over **property-matched** decoys. The decoys here are approved drugs from
+unrelated areas, which are not matched for size or physicochemical properties —
+and since score correlates with size at r² = 0.47, property matching would be a
+materially better design.
+
+---
+
 ## Reproducing it
 
 Two environments, because PyTorch ships its own OpenMP runtime that aborts at
