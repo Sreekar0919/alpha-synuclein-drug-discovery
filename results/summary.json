@@ -1,0 +1,156 @@
+{
+  "receptor": {
+    "pdb_id": "7YNM",
+    "ligand_code": "TFX",
+    "box_built_on_copy": "H201",
+    "n_ligand_copies": 8,
+    "n_symmetry_copies_in_box": 3,
+    "box_center": [
+      176.891,
+      169.842,
+      150.51
+    ],
+    "box_size": [
+      28.532,
+      19.382,
+      19.252
+    ],
+    "site_residues": [
+      "TYR39",
+      "GLU46",
+      "LYS80",
+      "THR81",
+      "VAL82"
+    ]
+  },
+  "docking": {
+    "engine": "AutoDock Vina 1.2.7 (python API)",
+    "exhaustiveness": 16,
+    "n_poses": 9,
+    "seed": 42,
+    "n_docked": 58,
+    "n_failed": 0,
+    "failures": [],
+    "runtime_minutes": 49.72
+  },
+  "redock_control": {
+    "apo": {
+      "best_score": -5.336,
+      "scores": [
+        -5.336,
+        -5.179,
+        -5.111,
+        -5.072,
+        -5.027,
+        -4.944,
+        -4.857,
+        -4.856,
+        -4.84
+      ],
+      "top_pose_rmsd": 9.43,
+      "best_pose_rmsd": 6.25,
+      "best_pose_rank": 9,
+      "best_pose_score": -4.84,
+      "all_pose_rmsds": [
+        9.43,
+        9.38,
+        8.77,
+        9.22,
+        7.87,
+        7.82,
+        8.05,
+        8.0,
+        6.25
+      ],
+      "passes_2A_top_pose": false
+    },
+    "holo": {
+      "best_score": -8.819,
+      "scores": [
+        -8.819,
+        -7.454,
+        -7.247,
+        -7.243,
+        -6.953,
+        -6.756,
+        -6.453,
+        -6.383,
+        -6.196
+      ],
+      "top_pose_rmsd": 8.04,
+      "best_pose_rmsd": 2.79,
+      "best_pose_rank": 7,
+      "best_pose_score": -6.45,
+      "all_pose_rmsds": [
+        8.04,
+        8.3,
+        7.94,
+        3.15,
+        4.39,
+        5.06,
+        2.79,
+        5.66,
+        5.76
+      ],
+      "passes_2A_top_pose": false
+    }
+  },
+  "ranking_by_score": {
+    "column": "best_score",
+    "n_reference": 8,
+    "n_decoy": 50,
+    "reference_median": -6.364,
+    "decoy_median": -5.819,
+    "u_statistic": 132.0,
+    "p_value": 0.06399118408451075,
+    "p_value_is_one_sided": true,
+    "roc_auc": 0.67,
+    "rank_biserial": 0.34
+  },
+  "ranking_by_ligand_efficiency": {
+    "column": "ligand_efficiency",
+    "n_reference": 8,
+    "n_decoy": 50,
+    "reference_median": -0.242,
+    "decoy_median": -0.264,
+    "u_statistic": 226.0,
+    "p_value": 0.7249358168892988,
+    "p_value_is_one_sided": true,
+    "roc_auc": 0.435,
+    "rank_biserial": -0.13
+  },
+  "enrichment": [
+    {
+      "top_fraction": 0.05,
+      "n_screened": 3,
+      "references_found": 2,
+      "references_total": 8,
+      "hit_rate": 0.667,
+      "baseline_rate": 0.138,
+      "enrichment_factor": 4.83
+    },
+    {
+      "top_fraction": 0.1,
+      "n_screened": 6,
+      "references_found": 2,
+      "references_total": 8,
+      "hit_rate": 0.333,
+      "baseline_rate": 0.138,
+      "enrichment_factor": 2.42
+    },
+    {
+      "top_fraction": 0.2,
+      "n_screened": 12,
+      "references_found": 4,
+      "references_total": 8,
+      "hit_rate": 0.333,
+      "baseline_rate": 0.138,
+      "enrichment_factor": 2.42
+    }
+  ],
+  "best_overall": {
+    "name": "Congo red",
+    "label": "reference",
+    "best_score": -8.115
+  }
+}

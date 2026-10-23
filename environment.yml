@@ -1,0 +1,15 @@
+name: asyn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - rdkit
+  - openbabel
+  - vina
+  - meeko
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - requests
+  - jupyter

@@ -1,0 +1,4 @@
+top_fraction,n_screened,references_found,references_total,hit_rate,baseline_rate,enrichment_factor
+0.05,3,2,8,0.667,0.138,4.83
+0.1,6,2,8,0.333,0.138,2.42
+0.2,12,4,8,0.333,0.138,2.42

@@ -11,6 +11,8 @@ venv/
 # data never goes in these repos
 data/
 *.csv
+# ...but committed result tables are the point of this repo
+!results/*.csv
 *.nii
 *.zip
 session_data/

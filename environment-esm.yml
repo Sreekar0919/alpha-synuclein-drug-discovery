@@ -1,0 +1,17 @@
+# Separate environment for the ESM-2 side analysis.
+#
+# PyTorch ships its own OpenMP runtime, which aborts at import time when the
+# conda libomp that RDKit and Vina link against is already loaded
+# ("OMP: Error #15"). Keeping the two apart avoids that clash without the
+# unsafe KMP_DUPLICATE_LIB_OK override.
+name: asyn-esm
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - matplotlib
+  - pip
+  - pip:
+      - torch
+      - fair-esm

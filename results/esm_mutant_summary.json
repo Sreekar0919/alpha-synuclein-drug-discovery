@@ -1,0 +1,65 @@
+{
+  "model": "esm2_t30_150M_UR50D",
+  "sequence_length": 140,
+  "nac_region": [
+    61,
+    95
+  ],
+  "mutants": {
+    "A30P": {
+      "mean_abs_change": 0.00085,
+      "max_abs_change": 0.1809,
+      "frobenius_norm": 0.7663,
+      "nac_mean_abs_change": 0.00172,
+      "map_correlation": 0.996885,
+      "embedding_cosine_to_wt": 0.999726
+    },
+    "E46K": {
+      "mean_abs_change": 0.00095,
+      "max_abs_change": 0.29924,
+      "frobenius_norm": 0.9862,
+      "nac_mean_abs_change": 0.00182,
+      "map_correlation": 0.994888,
+      "embedding_cosine_to_wt": 0.999391
+    },
+    "A53T": {
+      "mean_abs_change": 0.00057,
+      "max_abs_change": 0.16588,
+      "frobenius_norm": 0.5712,
+      "nac_mean_abs_change": 0.00215,
+      "map_correlation": 0.998275,
+      "embedding_cosine_to_wt": 0.999879
+    }
+  },
+  "controls": {
+    "A19G": {
+      "mean_abs_change": 0.00074,
+      "max_abs_change": 0.21238,
+      "frobenius_norm": 0.6867,
+      "nac_mean_abs_change": 0.00142,
+      "map_correlation": 0.99757,
+      "embedding_cosine_to_wt": 0.999869
+    },
+    "V40A": {
+      "mean_abs_change": 0.00088,
+      "max_abs_change": 0.36464,
+      "frobenius_norm": 0.8544,
+      "nac_mean_abs_change": 0.0017,
+      "map_correlation": 0.996121,
+      "embedding_cosine_to_wt": 0.999912
+    },
+    "T75S": {
+      "mean_abs_change": 0.0004,
+      "max_abs_change": 0.2602,
+      "frobenius_norm": 0.4951,
+      "nac_mean_abs_change": 0.00282,
+      "map_correlation": 0.998722,
+      "embedding_cosine_to_wt": 0.999936
+    }
+  },
+  "comparison": {
+    "familial_median_frobenius": 0.7663,
+    "control_median_frobenius": 0.6867,
+    "note": "Controls are substitutions with no reported Parkinson's link. If the two medians are similar, the familial mutations do not perturb the predicted contact map more than an arbitrary substitution does."
+  }
+}
