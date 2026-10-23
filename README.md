@@ -35,6 +35,14 @@ below risperidone, tadalafil and prednisone.
 The apparent enrichment on raw score (left) does not survive normalising for
 molecular size (right).
 
+Ligand efficiency has a bias of its own, in the opposite direction: dividing by
+heavy-atom count over-rewards very small molecules, and the top of that ranking
+is metformin at 9 heavy atoms. So the two columns bracket the problem rather
+than settling it — raw score favours large molecules, efficiency favours small
+ones, and the reference compounds are not consistently at the top of either.
+Neither metric is the arbiter on its own; what matters is that the apparent
+signal does not survive a change of normalisation.
+
 ---
 
 ## Why this receptor and this site
@@ -193,6 +201,10 @@ sufficient for a qualitative comparison. Change `MODEL_NAME` in
 - **8 references is a small sample.** The confidence interval on an AUC from 8
   positives is wide, which is exactly why the p-value of 0.064 is reported
   rather than described as a trend toward significance.
+- **Neither scoring column is unbiased.** Raw Vina score rises with molecular
+  size; ligand efficiency over-corrects and favours very small molecules. They
+  are reported together because they fail in opposite directions, not because
+  either one is the right answer.
 
 Given that the redocking control fails, the ranking results should be read as
 **evidence about this protocol**, not as evidence about these compounds.
